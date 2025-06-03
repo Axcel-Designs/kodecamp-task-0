@@ -1,6 +1,8 @@
 const regionSelect = document.getElementById("regionSelect");
 const searchInput = document.getElementById("searchbar");
 const countriesList = document.getElementById("countriesList");
+const themeToggler = document.getElementById("themeToggle");
+
 
 async function getWorld(url) {
   const data = await fetch(url);
@@ -74,3 +76,9 @@ regionSelect.addEventListener("input", (event) => {
 
 countriesListVisualization(filteredCountriesData(searchInput.value));
 
+// color theme switcher
+themeToggler.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+  themeToggler.querySelector("i").classList.toggle("fa-regular");
+  themeToggler.querySelector("i").classList.toggle("fa-solid");
+});

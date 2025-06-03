@@ -4,16 +4,12 @@
     padding: 0;
     font-family: "Nunito Sans", sans-serif;
     box-sizing: border-box;
+    color: var(--grey950);
 }  
 body {
     width: 100%;
 }
 :root{
-      --color1: #171717;
-    --color2: #5f6368;
-    --color3: #D4D6D9;
-    --color4: #303134; 
-
     --blue900: hsl(209, 23%, 22%);
     --blue950: hsl(207, 26%, 17%);
     --grey950: hsl(200, 15%, 8%);
@@ -21,12 +17,20 @@ body {
     --grey50: hsl(0, 0%, 99%);
     --white: hsl(0, 100%, 100%);
 }
+.dark{
+     /* --blue900: hsl(209, 23%, 22%);
+        --blue950: hsl(207, 26%, 17%); */
+        --grey950: hsl(0, 100%, 100%);
+        --grey400: hsl(200, 15%, 8%);
+        --grey50: hsl(207, 26%, 17%);
+        --white: hsl(209, 23%, 22%);
+}
 header{
-    box-shadow: 1px 1px 5px 0.5px rgba(0,0,0,0.55);
+    background-color: var(--white);
+    box-shadow: 1px 1px 5px 0.5px var(--grey400);
     h3{
         font-family: "Nunito Sans", sans-serif;
         font-weight: 900;
-        /* font-style: normal; */
     }
 }
 .headerContainer{
@@ -37,9 +41,15 @@ header{
     justify-content: space-between;
     padding: 1vw 0;
 }
+.themeToggle{
+    cursor: pointer;
+    span{
+        margin-left: 2px;
+    }
+}
 main{
     margin: auto;
-    background-color: rgba(0,0,0,0.05);
+    background-color: var(--grey50);
 }
 
 #countriesListContainer{
@@ -57,10 +67,11 @@ main{
         width: 40%;
     }
     input,select{
-        box-shadow: 1px 1px 5px 0.5px rgba(0, 0, 0, 0.55);
-        padding: 7.5px 10px;
+        background-color: var(--white);
+        box-shadow: 1px 1px 5px 0.5px var(--grey400);        padding: 7.5px 10px;
         border: none;
         outline: none;
+        background-color: var(--white);
         border-radius: 0.52vw;
     }
 
@@ -75,8 +86,9 @@ main{
     gap: 50px;
 }
 .countryBox{
+    background-color: var(--white);
     border-radius: 5px;
-    box-shadow: 1px 1px 5px 0.5px rgba(0,0,0,0.25);
+    box-shadow: 1px 1px 5px 0.5px var(--grey400);
     background: var(--white);
     width: 200px;
     display: flex;
@@ -100,7 +112,7 @@ footer{
     bottom:  -50vh ; */
     display: flex;
     width: 100%;
-    background-color: var(--color1);
+    background-color: var(--grey950);
     padding: 1vw;
     text-align: center;
     color: var(--blue);
