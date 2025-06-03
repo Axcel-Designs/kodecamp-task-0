@@ -3,13 +3,11 @@ const searchInput = document.getElementById("searchbar");
 const countriesList = document.getElementById("countriesList");
 const themeToggler = document.getElementById("themeToggle");
 
-
 async function getWorld(url) {
   const data = await fetch(url);
   const response = await data.json();
 
   return response.map((country) => {
-
     return {
       name: country.name.common,
       flag: country.flags.svg,
@@ -26,15 +24,15 @@ getWorld(`https://restcountries.com/v3.1/all`).then((data) => {
   countriesListVisualization(filteredCountriesData(searchInput.value));
 });
 
-
 // countriesList manipulation code here (sorted Countriesdata Object)
 const filteredCountriesData = (searchtext) => {
   searchtext = searchtext.toLowerCase();
   // return countriesData
   return worldData
-  .filter((country) => {
-    return country.name.toLowerCase().includes(searchtext);
-  }).sort((a, b) => a.name.localeCompare(b.name));
+    .filter((country) => {
+      return country.name.toLowerCase().includes(searchtext);
+    })
+    .sort((a, b) => a.name.localeCompare(b.name));
 };
 // const sortedCountriesData = (region) => {
 //   return region === "All"? filteredCountriesData(inputValue) : filteredCountriesData(inputValue).filter((country) => {
@@ -54,7 +52,9 @@ const countriesListVisualization = (sortedCountriesData) => {
   sortedCountriesData.forEach((country) => {
     countriesList.innerHTML += `
       <div class="countryBox">
-        <img src="${country.flag}" id="countryImg" alt="Flag of ${country.name}">
+        <img src="${country.flag}" id="countryImg" alt="Flag of ${
+      country.name
+    }">
         <div class="countryInfo">
           <p id="countryName"> <b>${country.name}</b></p>
           <p><b>Population</b>: ${country.population.toLocaleString()}</p>
@@ -71,7 +71,9 @@ searchInput.addEventListener("input", () => {
 });
 regionSelect.addEventListener("input", (event) => {
   const regionValue = regionSelect.value;
-  countriesListVisualization(sortedCountriesData(regionValue, searchInput.value));
+  countriesListVisualization(
+    sortedCountriesData(regionValue, searchInput.value)
+  );
 });
 
 countriesListVisualization(filteredCountriesData(searchInput.value));
