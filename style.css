@@ -9,11 +9,7 @@ body {
     width: 100%;
 }
 :root{
-    /* --white:white;
-    --black:black;
-    --blue:#5758a0; 
-    */
-    --color1: #171717;
+      --color1: #171717;
     --color2: #5f6368;
     --color3: #D4D6D9;
     --color4: #303134; 
@@ -29,8 +25,8 @@ header{
     box-shadow: 1px 1px 5px 0.5px rgba(0,0,0,0.55);
     h3{
         font-family: "Nunito Sans", sans-serif;
-        font-weight: 600;
-        font-style: normal;
+        font-weight: 900;
+        /* font-style: normal; */
     }
 }
 .headerContainer{
@@ -74,7 +70,8 @@ main{
     padding: 2vh 0;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: space-evenly;
     gap: 50px;
 }
 .countryBox{
